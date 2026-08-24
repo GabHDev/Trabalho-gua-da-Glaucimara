@@ -1,0 +1,1363 @@
+/* =========================================================
+   CADA GOTA CONTA — style.css
+   Visual editorial inspirado na referência enviada
+   ========================================================= */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f5;
+    color: #18172d;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 105px;
+    padding: 0 4vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(248, 249, 247, .95);
+    backdrop-filter: blur(14px);
+
+    border-top: 4px solid #263c3a;
+    border-bottom: 1px solid rgba(23, 45, 44, .12);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 250px;
+    color: #172d2c;
+}
+
+.logo-symbol {
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 31px;
+
+    border: 2px solid #172d2c;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-family: Georgia, "", serif;
+    font-size: 20px;
+    line-height: .95;
+}
+
+.logo-text b {
+    font-size: 27px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2.4vw, 34px);
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    white-space: nowrap;
+
+    transition: color .25s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    background: #258f91;
+
+    transition: width .25s ease;
+}
+
+.nav-links a:hover {
+    color: #258f91;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.search-icon {
+    border: 0;
+    background: transparent;
+    color: #172d2c;
+
+    font-size: 34px;
+    line-height: 1;
+
+    transition: transform .2s ease;
+}
+
+.search-icon:hover {
+    transform: scale(1.12);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 850px;
+    padding: 165px 8vw 90px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 78% 38%, rgba(255,255,255,.95), transparent 30%),
+        linear-gradient(120deg, #dbe9e6 0%, #edf2ef 55%, #fff 100%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -210px;
+    top: 80px;
+
+    border-radius: 50%;
+    background: rgba(37, 143, 145, .07);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+
+    color: #258f91;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(70px, 9vw, 145px);
+    font-weight: 400;
+    line-height: .82;
+    letter-spacing: -6px;
+
+    color: #1c2929;
+}
+
+.hero h1 span {
+    color: #258f91;
+}
+
+.hero-text > p:not(.eyebrow) {
+    max-width: 560px;
+    margin-bottom: 35px;
+
+    font-size: 18px;
+    color: #405452;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 15px 28px;
+
+    background: #172d2c;
+    color: #fff;
+
+    border-radius: 2px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: background .25s ease, transform .25s ease;
+}
+
+.primary-btn:hover {
+    background: #258f91;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   ARTE DO HERO
+   ========================================================= */
+
+.hero-art {
+    min-height: 500px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring {
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border: 1px solid rgba(37, 143, 145, .35);
+    border-radius: 50%;
+}
+
+.ring::before {
+    content: "";
+    position: absolute;
+    inset: 45px;
+
+    border: 1px solid rgba(37, 143, 145, .20);
+    border-radius: 50%;
+}
+
+.drop {
+    position: relative;
+    z-index: 2;
+
+    width: 230px;
+    height: 280px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 110px;
+
+    background: rgba(255,255,255,.45);
+    border-radius: 55% 55% 60% 60%;
+
+    filter: drop-shadow(0 25px 30px rgba(23,45,44,.12));
+
+    animation: floatDrop 4s ease-in-out infinite;
+}
+
+.sprout {
+    position: absolute;
+    right: 8%;
+    bottom: 20%;
+
+    font-size: 70px;
+
+    transform: rotate(-8deg);
+    animation: floatSprout 4s ease-in-out infinite;
+}
+
+@keyframes floatDrop {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes floatSprout {
+    0%, 100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-8deg) translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   SEÇÕES GERAIS
+   ========================================================= */
+
+.section {
+    padding: 120px 8vw;
+}
+
+.section-heading {
+    max-width: 850px;
+    margin-bottom: 55px;
+}
+
+.section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: #172d2c;
+}
+
+
+/* =========================================================
+   SOBRE / POR QUE ESCOLHEMOS
+   ========================================================= */
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+
+    background: #fff;
+}
+
+.intro > p {
+    align-self: end;
+    max-width: 600px;
+
+    font-size: 18px;
+    color: #536663;
+}
+
+
+/* =========================================================
+   HISTÓRIAS
+   ========================================================= */
+
+.cards {
+    background: #e8efed;
+}
+
+.grid {
+    display: grid;
+    gap: 25px;
+}
+
+.grid.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    min-height: 330px;
+    padding: 35px;
+
+    background: #fff;
+    border: 1px solid rgba(23,45,44,.1);
+
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(23,45,44,.12);
+}
+
+.card > span {
+    display: block;
+    margin-bottom: 80px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    color: #258f91;
+}
+
+.card h3 {
+    margin-bottom: 14px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.card p {
+    font-size: 15px;
+    color: #60716e;
+}
+
+
+/* =========================================================
+   DADOS
+   ========================================================= */
+
+.data-section {
+    background: #fff;
+}
+
+.grid.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+    padding: 35px 20px;
+
+    border-top: 2px solid #172d2c;
+}
+
+.stat strong {
+    display: block;
+    margin-bottom: 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1;
+
+    color: #258f91;
+}
+
+.stat span {
+    display: block;
+    font-size: 14px;
+    color: #536663;
+}
+
+.source-note {
+    margin-top: 35px;
+    font-size: 12px;
+    color: #82918e;
+}
+
+
+/* =========================================================
+   CIÊNCIA
+   ========================================================= */
+
+.science {
+    background: #172d2c;
+}
+
+.science .eyebrow {
+    color: #258f91;
+}
+
+.science-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    padding: 70px;
+
+    background: #dce9e6;
+}
+
+.science-box h2 {
+    margin-bottom: 25px;
+}
+
+.science-box > div:first-child > p:last-child {
+    max-width: 520px;
+    color: #526461;
+}
+
+.science-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.science-list button {
+    width: 100%;
+    padding: 20px 25px;
+
+    text-align: left;
+
+    border: 1px solid rgba(23,45,44,.18);
+    background: rgba(255,255,255,.65);
+    color: #172d2c;
+
+    font-size: 15px;
+
+    transition: background .25s ease, padding-left .25s ease;
+}
+
+.science-list button:hover {
+    background: #fff;
+    padding-left: 35px;
+}
+
+
+/* =========================================================
+   JOGO / QUIZ
+   ========================================================= */
+
+.quiz {
+    background: #f4f7f5;
+}
+
+.quiz-card {
+    max-width: 800px;
+    padding: 50px;
+
+    background: #fff;
+
+    border-top: 3px solid #258f91;
+
+    box-shadow: 0 15px 45px rgba(23,45,44,.08);
+}
+
+#quizQuestion {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.25;
+}
+
+#quizOptions {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+#quizOptions button {
+    padding: 15px 20px;
+
+    text-align: left;
+
+    border: 1px solid #d5dfdc;
+    background: #f8faf9;
+    color: #172d2c;
+
+    transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+#quizOptions button:hover {
+    border-color: #258f91;
+    background: #e8f3f1;
+    transform: translateX(4px);
+}
+
+.quiz-result {
+    min-height: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.secondary-btn {
+    padding: 13px 22px;
+
+    border: 1px solid #172d2c;
+    background: transparent;
+    color: #172d2c;
+
+    font-weight: 700;
+
+    transition: all .25s ease;
+}
+
+.secondary-btn:hover {
+    background: #172d2c;
+    color: #fff;
+}
+
+
+/* =========================================================
+   CHATBOT
+   ========================================================= */
+
+.chatbot {
+    position: fixed;
+    right: 25px;
+    bottom: 95px;
+    z-index: 2000;
+
+    width: 360px;
+
+    display: none;
+
+    background: #fff;
+
+    border-radius: 4px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.18);
+}
+
+.chatbot.active,
+.chatbot.open {
+    display: block;
+}
+
+.chat-header {
+    padding: 18px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #172d2c;
+    color: #fff;
+}
+
+.chat-header strong {
+    display: block;
+}
+
+.chat-header small {
+    display: block;
+    margin-top: 2px;
+
+    font-size: 11px;
+    opacity: .7;
+}
+
+#closeChat {
+    border: 0;
+    background: transparent;
+    color: #fff;
+
+    font-size: 28px;
+    line-height: 1;
+}
+
+.chat-messages {
+    height: 280px;
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.bot-msg {
+    max-width: 85%;
+    padding: 12px 15px;
+
+    background: #e8f3f1;
+    color: #29413f;
+
+    font-size: 14px;
+}
+
+.chat-suggestions {
+    padding: 10px 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chat-suggestions button {
+    padding: 7px 10px;
+
+    border: 1px solid #d5dfdc;
+    background: #fff;
+    color: #29413f;
+
+    font-size: 11px;
+}
+
+.chat-suggestions button:hover {
+    background: #e8f3f1;
+}
+
+#chatForm {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+#chatInput {
+    flex: 1;
+    min-width: 0;
+
+    padding: 15px;
+
+    border: 0;
+    outline: 0;
+}
+
+#chatForm button {
+    width: 55px;
+
+    border: 0;
+    background: #258f91;
+    color: #fff;
+}
+
+
+/* =========================================================
+   BOTÃO FLUTUANTE
+   ========================================================= */
+
+.chat-fab {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1900;
+
+    width: 60px;
+    height: 60px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #172d2c;
+    color: #fff;
+
+    font-size: 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+
+    transition: transform .2s ease, background .2s ease;
+}
+
+.chat-fab:hover {
+    background: #258f91;
+    transform: scale(1.07);
+}
+
+
+/* =========================================================
+   PESQUISA
+   ========================================================= */
+
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(23,45,44,.95);
+}
+
+.search-overlay.active,
+.search-overlay.open {
+    display: flex;
+}
+
+.search-container {
+    position: relative;
+    width: min(800px, 90%);
+}
+
+.search-input {
+    width: 100%;
+    padding: 20px 0;
+
+    border: 0;
+    border-bottom: 2px solid #fff;
+    outline: 0;
+
+    background: transparent;
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.search-input::placeholder {
+    color: rgba(255,255,255,.55);
+}
+
+.close-btn {
+    position: absolute;
+    top: -60px;
+    right: 0;
+
+    border: 0;
+    background: transparent;
+    color: #fff;
+
+    font-size: 30px;
+}
+
+#searchResults {
+    margin-top: 20px;
+    color: #fff;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    min-height: 150px;
+    padding: 40px 8vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #172d2c;
+    color: #fff;
+}
+
+footer strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+}
+
+footer span {
+    font-size: 13px;
+    opacity: .65;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 3vw;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .logo {
+        min-width: 210px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 155px;
+    }
+
+    .hero-art {
+        min-height: 350px;
+    }
+
+    .intro,
+    .science-box {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .grid.three {
+        grid-template-columns: 1fr;
+    }
+
+    .grid.four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height: 76px;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        min-width: auto;
+        gap: 9px;
+    }
+
+    .logo-symbol {
+        width: 43px;
+        height: 43px;
+        font-size: 22px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .logo-text b {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        display: none;
+    }
+
+    .search-icon {
+        font-size: 28px;
+    }
+
+    .hero {
+        min-height: 760px;
+        padding: 125px 25px 65px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+        letter-spacing: -4px;
+    }
+
+    .hero-text > p:not(.eyebrow) {
+        font-size: 16px;
+    }
+
+    .hero-art {
+        min-height: 280px;
+    }
+
+    .ring {
+        width: 280px;
+        height: 280px;
+    }
+
+    .drop {
+        width: 160px;
+        height: 190px;
+        font-size: 75px;
+    }
+
+    .sprout {
+        right: 5%;
+        bottom: 12%;
+        font-size: 50px;
+    }
+
+    .section {
+        padding: 75px 25px;
+    }
+
+    .section h2 {
+        font-size: 40px;
+    }
+
+    .grid.four {
+        grid-template-columns: 1fr;
+    }
+
+    .science-box {
+        padding: 35px 25px;
+    }
+
+    .quiz-card {
+        padding: 30px 25px;
+    }
+
+    #quizQuestion {
+        font-size: 23px;
+    }
+
+    .chatbot {
+        right: 10px;
+        bottom: 85px;
+        width: calc(100% - 20px);
+    }
+
+    .chat-fab {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    footer {
+        padding: 35px 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-input {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+:focus-visible {
+    outline: 3px solid #258f91;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =========================================================
+   CARROSSEL DE DADOS CIENTÍFICOS
+   ========================================================= */
+
+   .data-carousel {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   ÁREA QUE ESCONDE OS CARDS
+   ========================================================= */
+
+.data-carousel-window {
+
+    flex: 1;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   FAIXA DOS CARDS
+   ========================================================= */
+
+.data-carousel-track {
+
+    display: flex;
+
+    width: 100%;
+
+    transition:
+        transform .55s cubic-bezier(.4, 0, .2, 1);
+
+}
+
+
+/* =========================================================
+   CARD INDIVIDUAL
+   ========================================================= */
+
+.data-carousel-track .stat {
+
+    flex: 0 0 25%;
+
+    min-width: 25%;
+
+    padding: 35px 30px;
+
+    border-top: 2px solid #172d2c;
+
+}
+
+
+/* Linha superior */
+
+.stat-line {
+
+    display: none;
+
+}
+
+
+/* Número */
+
+.data-carousel-track .stat strong {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(48px, 5vw, 78px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #258f91;
+
+}
+
+
+/* Texto */
+
+.data-carousel-track .stat span {
+
+    display: block;
+
+    max-width: 250px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #536663;
+
+}
+
+
+/* =========================================================
+   BOTÕES DO CARROSSEL
+   ========================================================= */
+
+.data-carousel-btn {
+
+    flex-shrink: 0;
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #172d2c;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #172d2c;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+
+.data-carousel-btn:hover {
+
+    background: #172d2c;
+
+    color: #fff;
+
+    transform: scale(1.08);
+
+}
+
+
+.data-carousel-btn:disabled {
+
+    opacity: .25;
+
+    cursor: default;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   INDICADORES
+   ========================================================= */
+
+.data-carousel-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 45px;
+
+}
+
+
+.data-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #c9d6d4;
+
+    transition:
+        width .25s ease,
+        background .25s ease;
+
+}
+
+
+.data-dot.active {
+
+    width: 28px;
+
+    border-radius: 20px;
+
+    background: #258f91;
+
+}
+
+
+/* =========================================================
+   ANIMAÇÃO SUAVE DOS CARDS
+   ========================================================= */
+
+.data-carousel-track .stat {
+
+    transition:
+        opacity .3s ease;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .data-carousel-track .stat {
+
+        flex: 0 0 50%;
+
+        min-width: 50%;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .data-carousel {
+
+        gap: 8px;
+
+    }
+
+
+    .data-carousel-track .stat {
+
+        flex: 0 0 100%;
+
+        min-width: 100%;
+
+        padding:
+            30px
+            20px
+            35px;
+
+    }
+
+
+    .data-carousel-track .stat strong {
+
+        font-size: 65px;
+
+    }
+
+
+    .data-carousel-track .stat span {
+
+        max-width: 300px;
+
+        font-size: 16px;
+
+    }
+
+
+    .data-carousel-btn {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 19px;
+
+    }
+
+
+    .data-carousel-dots {
+
+        margin-top: 30px;
+
+    }
+
+}
