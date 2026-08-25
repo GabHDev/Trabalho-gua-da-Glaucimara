@@ -1,9 +1,4 @@
-/* =========================================================
-   CADA GOTA CONTA — style.css
-   Visual editorial inspirado na referência enviada
-   ========================================================= */
-
-   * {
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -37,9 +32,6 @@ button {
 }
 
 
-/* =========================================================
-   NAVBAR
-   ========================================================= */
 
 .navbar {
     position: fixed;
@@ -148,10 +140,6 @@ button {
 }
 
 
-/* =========================================================
-   HERO
-   ========================================================= */
-
 .hero {
     min-height: 850px;
     padding: 165px 8vw 90px;
@@ -244,9 +232,7 @@ button {
 }
 
 
-/* =========================================================
-   ARTE DO HERO
-   ========================================================= */
+
 
 .hero-art {
     min-height: 500px;
@@ -329,9 +315,6 @@ button {
 }
 
 
-/* =========================================================
-   SEÇÕES GERAIS
-   ========================================================= */
 
 .section {
     padding: 120px 8vw;
@@ -352,9 +335,6 @@ button {
 }
 
 
-/* =========================================================
-   SOBRE / POR QUE ESCOLHEMOS
-   ========================================================= */
 
 .intro {
     display: grid;
@@ -373,9 +353,6 @@ button {
 }
 
 
-/* =========================================================
-   HISTÓRIAS
-   ========================================================= */
 
 .cards {
     background: #e8efed;
@@ -429,10 +406,6 @@ button {
 }
 
 
-/* =========================================================
-   DADOS
-   ========================================================= */
-
 .data-section {
     background: #fff;
 }
@@ -471,10 +444,6 @@ button {
     color: #82918e;
 }
 
-
-/* =========================================================
-   CIÊNCIA
-   ========================================================= */
 
 .science {
     background: #172d2c;
@@ -530,9 +499,7 @@ button {
 }
 
 
-/* =========================================================
-   JOGO / QUIZ
-   ========================================================= */
+
 
 .quiz {
     background: #f4f7f5;
@@ -605,226 +572,8 @@ button {
 }
 
 
-/* =========================================================
-   CHATBOT
-   ========================================================= */
-
-.chatbot {
-    position: fixed;
-    right: 25px;
-    bottom: 95px;
-    z-index: 2000;
-
-    width: 360px;
-
-    display: none;
-
-    background: #fff;
-
-    border-radius: 4px;
-    overflow: hidden;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,.18);
-}
-
-.chatbot.active,
-.chatbot.open {
-    display: block;
-}
-
-.chat-header {
-    padding: 18px 20px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: #172d2c;
-    color: #fff;
-}
-
-.chat-header strong {
-    display: block;
-}
-
-.chat-header small {
-    display: block;
-    margin-top: 2px;
-
-    font-size: 11px;
-    opacity: .7;
-}
-
-#closeChat {
-    border: 0;
-    background: transparent;
-    color: #fff;
-
-    font-size: 28px;
-    line-height: 1;
-}
-
-.chat-messages {
-    height: 280px;
-    padding: 20px;
-
-    overflow-y: auto;
-}
-
-.bot-msg {
-    max-width: 85%;
-    padding: 12px 15px;
-
-    background: #e8f3f1;
-    color: #29413f;
-
-    font-size: 14px;
-}
-
-.chat-suggestions {
-    padding: 10px 15px;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.chat-suggestions button {
-    padding: 7px 10px;
-
-    border: 1px solid #d5dfdc;
-    background: #fff;
-    color: #29413f;
-
-    font-size: 11px;
-}
-
-.chat-suggestions button:hover {
-    background: #e8f3f1;
-}
-
-#chatForm {
-    display: flex;
-    border-top: 1px solid #ddd;
-}
-
-#chatInput {
-    flex: 1;
-    min-width: 0;
-
-    padding: 15px;
-
-    border: 0;
-    outline: 0;
-}
-
-#chatForm button {
-    width: 55px;
-
-    border: 0;
-    background: #258f91;
-    color: #fff;
-}
 
 
-/* =========================================================
-   BOTÃO FLUTUANTE
-   ========================================================= */
-
-.chat-fab {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    z-index: 1900;
-
-    width: 60px;
-    height: 60px;
-
-    border: 0;
-    border-radius: 50%;
-
-    background: #172d2c;
-    color: #fff;
-
-    font-size: 25px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.2);
-
-    transition: transform .2s ease, background .2s ease;
-}
-
-.chat-fab:hover {
-    background: #258f91;
-    transform: scale(1.07);
-}
-
-
-/* =========================================================
-   PESQUISA
-   ========================================================= */
-
-.search-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 3000;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(23,45,44,.95);
-}
-
-.search-overlay.active,
-.search-overlay.open {
-    display: flex;
-}
-
-.search-container {
-    position: relative;
-    width: min(800px, 90%);
-}
-
-.search-input {
-    width: 100%;
-    padding: 20px 0;
-
-    border: 0;
-    border-bottom: 2px solid #fff;
-    outline: 0;
-
-    background: transparent;
-    color: #fff;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-}
-
-.search-input::placeholder {
-    color: rgba(255,255,255,.55);
-}
-
-.close-btn {
-    position: absolute;
-    top: -60px;
-    right: 0;
-
-    border: 0;
-    background: transparent;
-    color: #fff;
-
-    font-size: 30px;
-}
-
-#searchResults {
-    margin-top: 20px;
-    color: #fff;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
 
 footer {
     min-height: 150px;
@@ -849,9 +598,7 @@ footer span {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1100px) {
 
@@ -894,11 +641,6 @@ footer span {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-
-/* =========================================================
-   CELULAR
-   ========================================================= */
 
 @media (max-width: 700px) {
 
@@ -1022,9 +764,6 @@ footer span {
 }
 
 
-/* =========================================================
-   ACESSIBILIDADE
-   ========================================================= */
 
 :focus-visible {
     outline: 3px solid #258f91;
@@ -1045,9 +784,7 @@ footer span {
     }
 }
 
-/* =========================================================
-   CARROSSEL DE DADOS CIENTÍFICOS
-   ========================================================= */
+
 
    .data-carousel {
 
@@ -1064,9 +801,6 @@ footer span {
 }
 
 
-/* =========================================================
-   ÁREA QUE ESCONDE OS CARDS
-   ========================================================= */
 
 .data-carousel-window {
 
@@ -1075,11 +809,6 @@ footer span {
     overflow: hidden;
 
 }
-
-
-/* =========================================================
-   FAIXA DOS CARDS
-   ========================================================= */
 
 .data-carousel-track {
 
@@ -1092,10 +821,6 @@ footer span {
 
 }
 
-
-/* =========================================================
-   CARD INDIVIDUAL
-   ========================================================= */
 
 .data-carousel-track .stat {
 
@@ -1110,7 +835,7 @@ footer span {
 }
 
 
-/* Linha superior */
+
 
 .stat-line {
 
@@ -1119,7 +844,6 @@ footer span {
 }
 
 
-/* Número */
 
 .data-carousel-track .stat strong {
 
@@ -1143,7 +867,6 @@ footer span {
 }
 
 
-/* Texto */
 
 .data-carousel-track .stat span {
 
@@ -1160,9 +883,6 @@ footer span {
 }
 
 
-/* =========================================================
-   BOTÕES DO CARROSSEL
-   ========================================================= */
 
 .data-carousel-btn {
 
@@ -1220,9 +940,6 @@ footer span {
 }
 
 
-/* =========================================================
-   INDICADORES
-   ========================================================= */
 
 .data-carousel-dots {
 
@@ -1271,9 +988,6 @@ footer span {
 }
 
 
-/* =========================================================
-   ANIMAÇÃO SUAVE DOS CARDS
-   ========================================================= */
 
 .data-carousel-track .stat {
 
@@ -1283,9 +997,6 @@ footer span {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
 
 @media (max-width: 1100px) {
 
@@ -1300,9 +1011,6 @@ footer span {
 }
 
 
-/* =========================================================
-   CELULAR
-   ========================================================= */
 
 @media (max-width: 700px) {
 
