@@ -26,10 +26,11 @@
         </a>
 
         <div class="nav-links">
+            <a href="index.html">inicio</a>
             <a href="#sobre">Sobre</a>
             <a href="#historias">Histórias</a>
             <a href="#dados">Curiosidades</a>
-            <a href="#brincar">Brincar</a>
+            <a href="Brincar.html">Brincar</a>
             <a href="#ciencia">Ciência</a>
 
             <button class="search-icon" id="openSearch" aria-label="Abrir pesquisa">
@@ -332,7 +333,7 @@
 
                     <button
                         data-science="As bacias hidrográficas são regiões onde a água da chuva se junta e segue para rios e outros cursos d'água! 🌱"
-                        onclick="window.location.href='bacia.html'">
+                        onclick="window.location.href='bacias.html'">
                         🌱 Bacias hidrográficas
                     </button>
 
@@ -347,138 +348,15 @@
             </div>
 
 
-            <div class="science-result" id="scienceResult">
-                Clique em um assunto para aprender! 🤓
-            </div>
+          <div class="science-result" id="scienceResult" style="background-color: #e3f2fd; border-left: 5px solid #2196f3; padding: 15px; font-size: 1.2rem; font-weight: bold; border-radius: 4px; text-align: center;">
+    Clique em um assunto para aprender! 🤓
+</div>
+
 
         </section>
 
 
-        <!-- =========================
-             JOGO
-        ========================== -->
-
-        <section class="kids-play" id="brincar">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">
-                    🎮 HORA DE BRINCAR
-                </p>
-
-                <h2>
-                    Missão: Guardião da Água! 💧
-                </h2>
-
-                <p>
-                    Clique na gotinha para juntar pontos e se tornar um verdadeiro Guardião da Água!
-                </p>
-
-            </div>
-
-
-            <div class="play-box">
-
-                <h3>
-                    Junte as gotinhas! 💦
-                </h3>
-
-
-                <div class="drop-counter">
-
-                    <button class="drop-game" id="dropGame" aria-label="Juntar uma gota de água">
-
-                        💧
-
-                    </button>
-
-
-                    <div>
-
-                        <span id="dropCount">
-                            0
-                        </span>
-
-                        <p>
-                            gotinhas salvas
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <p class="mission" id="waterMission">
-
-                    Missão: feche a torneira enquanto escova os dentes! 🪥
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             QUIZ
-        ========================== -->
-
-        <section class="quiz section" id="quiz">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">
-                    🧠 DESAFIO
-                </p>
-
-                <h2>
-                    Você conhece a água?
-                </h2>
-
-            </div>
-
-
-            <div class="quiz-card">
-
-                <div class="quiz-score">
-                    ⭐ Pontos:
-                    <span id="quizScore">0</span>
-                </div>
-
-
-                <div class="quiz-progress">
-
-                    <span id="quizProgress"></span>
-
-                </div>
-
-
-                <p id="quizQuestion">
-                    Carregando...
-                </p>
-
-
-                <div id="quizOptions"></div>
-
-
-                <p id="quizResult" class="quiz-result">
-                </p>
-
-
-                <button class="secondary-btn" id="nextQuiz">
-
-                    Próxima pergunta ➜
-
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
+           <!-- =========================
          CHATBOT
     ========================== -->
 
@@ -1342,6 +1220,146 @@
             }
         );
     </script>
+    
+    <footer class="site-footer">
+<div class="footer-content">
+<!-- Sobre o site -->
+<div class="footer-section">
+<h3>Sobre Cada Gota Conta 💧</h3>
+<p>Nosso objetivo é levar informação clara, rápida e de qualidade para todos as pessoas.</p>
+</div>
+ 
+    <!-- Links rápidos -->
+<div class="footer-section">
+<h4>Navegação</h4>
+<ul>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#sobre">Artigos</a></li>
+<li><a href="#historias">Histórias</a></li>
+<li><a href="#dados">Curiosidades</a></li>
+<li><a href="Brincar.html">Brincar</a></li>
+<li><a href="#ciencia">Ciência</a></li>
+</ul>
+</div>
+ 
+    <!-- Contato -->
+<div class="footer-section">
+<h4>Contato</h4>
+<address>
+
+        E-mail:secretariaculto@gmail.com <br>
+
+        Telefone: (19) 3232-3511 <br>
+
+        Endereço: R. Culto à Ciência, 422 - Botafogo, Campinas - SP, 13020-060
+</address>
+</div>
+</div>
+ 
+  <!-- Direitos Autorais -->
+<div class="footer-bottom">
+<p>&copy; 2026 Cada Gota Conta 💧. Todos os direitos reservados.</p>
+<style> .site-footer {
+
+  background-color: #1a1a1a;
+
+  color: #ffffff;
+
+  padding: 40px 20px 20px 20px;
+
+  font-family: Arial, sans-serif;
+
+}
+ 
+.footer-content {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  gap: 30px;
+
+}
+ 
+.footer-section {
+
+  flex: 1;
+
+  min-width: 220px;
+
+}
+ 
+.footer-section h3 {
+
+  font-size: 18px;
+
+  margin-bottom: 15px;
+
+  color: #f1f1f1;
+
+}
+ 
+.footer-section p, .footer-section ul {
+
+  font-size: 14px;
+
+  color: #b0b0b0;
+
+  line-height: 1.6;
+
+}
+ 
+.footer-section ul {
+
+  list-style: none;
+
+  padding: 0;
+
+}
+ 
+.footer-section ul li a {
+
+  color: #b0b0b0;
+
+  text-decoration: none;
+
+}
+ 
+.footer-section ul li a:hover {
+
+  color: #ffffff;
+
+  text-decoration: underline;
+
+}
+ 
+.footer-bottom {
+
+  text-align: center;
+
+  margin-top: 40px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #333333;
+
+  font-size: 12px;
+
+  color: #888888;
+
+}
+
+ </style>
+</div>
+</footer>
+
+ 
 
 </body>
 
