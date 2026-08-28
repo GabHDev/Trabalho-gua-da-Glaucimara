@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cada Gota Conta | História</title>
+    <link rel="icon" type="image/png" href="imagem.png">
+    <link
+        rel="stylesheet"
+        href="livros.css"
+    >
+
+</head>
+
+
+<body>
+
+
+  
+    <main class="livro">
+
+
+        
+        <a
+            href="index.html#historias"
+            class="voltar"
+        >
+
+            ← Biblioteca
+
+        </a>
+
+
+
+       
+
+        <header class="cabecalho-livro">
+
+            <h1 id="bookTitle">
+
+                Carregando...
+
+            </h1>
+
+        </header>
+
+
+
+       
+
+        <section
+            class="book-pages"
+            id="bookPages"
+        >
+
+        </section>
+
+
+
+        
+
+        <button
+            class="book-arrow left"
+            id="prevPage"
+            type="button"
+            aria-label="Página anterior"
+        >
+
+            ‹
+
+        </button>
+
+
+
+        
+
+        <button
+            class="book-arrow right"
+            id="nextPage"
+            type="button"
+            aria-label="Próxima página"
+        >
+
+            ›
+
+        </button>
+
+
+
+       
+        <div class="book-controls">
+
+
+            <div
+                class="page-dots"
+                id="pageDots"
+            >
+
+            </div>
+
+
+            <div
+                class="page-counter"
+                id="pageCounter"
+            >
+
+                1 / 1
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+  
+
+    <script>
+
+
+       
+
+
+        const historias = {
+
+
+            
+
+            rio: {
+
+                titulo: "Do rio à torneira",
+
+                paginas: [
+
+                    "Do rio.png",
+
+                    "gota1.png.jpeg",
+
+                    "gota2.png.jpeg",
+
+                    "gota3.png.jpeg",
+
+                    "gota4.png.jpeg",
+
+                    "gota5.png.jpeg",
+
+                    "gota6.png.jpeg",
+
+                    "gota7.png.jpeg",
+
+                    "gota8.png.jpeg",
+
+                    "gota9.png.jpeg",
+
+                    "gota10.png.jpeg",
+
+                    "gota11.png.jpeg",
+
+                    "gota12.png.jpeg",
+
+                    "f63f961c-d5a3-49ab-850f-0be582a71676.png"
+
+                ]
+
+            },
+
+
+        
+            viajante: {
+
+                titulo: "Uma gota viajante",
+
+                paginas: [
+
+                    "aventureiros.png",
+
+                    "gota1.jpeg",
+
+                    "gota 2.jpeg",
+
+                    "gota3.jpeg",
+
+                    "gota4 (2).jpeg", 
+
+                    "gota5.jpeg", 
+
+                    "gota6.jpeg",
+
+                    "gota7.jpeg",
+
+                    "gota 8.jpeg", 
+
+                    "gota9.jpeg",
+
+                    "f63f961c-d5a3-49ab-850f-0be582a71676.png"
+
+                ]
+
+            },
+
+
+           
+
+            falta: {
+
+                titulo: "Quando a água falta",
+
+                paginas: [
+
+                    "faroeste.png",
+
+                    "água2.png.jpeg",
+
+                    "água3.png.jpeg",
+
+                    "água4.png.jpeg",
+
+                    "água5.png.jpeg",
+
+                    "água6.png.jpeg",
+
+                    "água7.png.jpeg",
+
+                    "f63f961c-d5a3-49ab-850f-0be582a71676.png"
+
+                ]
+
+            }
+
+        };
+
+
+
+        const parametros =
+
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const historiaSelecionada =
+
+            parametros.get("historia") || "rio";
+
+
+        const historia =
+
+            historias[historiaSelecionada]
+
+            || historias.rio;
+
+
+
+       
+
+
+        const bookPages =
+
+            document.getElementById(
+                "bookPages"
+            );
+
+
+        const pageDots =
+
+            document.getElementById(
+                "pageDots"
+            );
+
+
+        const pageCounter =
+
+            document.getElementById(
+                "pageCounter"
+            );
+
+
+        const bookTitle =
+
+            document.getElementById(
+                "bookTitle"
+            );
+
+
+        const prevPage =
+
+            document.getElementById(
+                "prevPage"
+            );
+
+
+        const nextPage =
+
+            document.getElementById(
+                "nextPage"
+            );
+
+
+
+       
+
+        let paginaAtual = 0;
+
+
+
+    
+
+
+        bookTitle.textContent =
+
+            historia.titulo;
+
+
+
+
+
+        historia.paginas.forEach(
+
+            function(imagem, index) {
+
+
+               
+
+
+                const pagina =
+
+                    document.createElement(
+                        "div"
+                    );
+
+
+                pagina.className =
+                    "book-page";
+
+
+                if (index === 0) {
+
+                    pagina.classList.add(
+                        "active"
+                    );
+
+                }
+
+
+
+               
+
+
+                const img =
+
+                    document.createElement(
+                        "img"
+                    );
+
+
+                img.src =
+                    imagem;
+
+
+                img.alt =
+
+                    historia.titulo
+                    + " - página "
+                    + (index + 1);
+
+
+                img.draggable = false;
+
+
+
+               
+
+
+                img.onerror = function() {
+
+                    console.error(
+                        "Imagem não encontrada:",
+                        imagem
+                    );
+
+                };
+
+
+
+               
+
+                pagina.appendChild(img);
+
+
+                bookPages.appendChild(
+                    pagina
+                );
+
+
+
+             
+
+
+                const dot =
+
+                    document.createElement(
+                        "button"
+                    );
+
+
+                dot.type =
+                    "button";
+
+
+                dot.className =
+                    "page-dot";
+
+
+                dot.setAttribute(
+                    "aria-label",
+                    "Ir para a página "
+                    + (index + 1)
+                );
+
+
+                if (index === 0) {
+
+                    dot.classList.add(
+                        "active"
+                    );
+
+                }
+
+
+                dot.addEventListener(
+                    "click",
+                    function() {
+
+                        irParaPagina(index);
+
+                    }
+                );
+
+
+                pageDots.appendChild(
+                    dot
+                );
+
+            }
+
+        );
+
+
+
+        
+
+        const paginas =
+
+            document.querySelectorAll(
+                ".book-page"
+            );
+
+
+        const dots =
+
+            document.querySelectorAll(
+                ".page-dot"
+            );
+
+
+
+       
+
+
+        function atualizarLeitor() {
+
+
+         
+
+
+            paginas.forEach(
+
+                function(pagina, index) {
+
+                    pagina.classList.toggle(
+
+                        "active",
+
+                        index === paginaAtual
+
+                    );
+
+                }
+
+            );
+
+
+
+
+            dots.forEach(
+
+                function(dot, index) {
+
+                    dot.classList.toggle(
+
+                        "active",
+
+                        index === paginaAtual
+
+                    );
+
+                }
+
+            );
+
+
+
+            
+
+            pageCounter.textContent =
+
+                (paginaAtual + 1)
+                + " / "
+                + paginas.length;
+
+
+
+           
+
+
+            prevPage.disabled =
+
+                paginaAtual === 0;
+
+
+
+            
+
+
+            nextPage.disabled =
+
+                paginaAtual ===
+                paginas.length - 1;
+
+        }
+
+
+
+        
+
+        function irParaPagina(numero) {
+
+
+            if (
+
+                numero < 0
+
+                ||
+
+                numero >= paginas.length
+
+            ) {
+
+                return;
+
+            }
+
+
+            paginaAtual =
+                numero;
+
+
+            atualizarLeitor();
+
+        }
+
+
+
+       
+
+
+        nextPage.addEventListener(
+
+            "click",
+
+            function() {
+
+                irParaPagina(
+
+                    paginaAtual + 1
+
+                );
+
+            }
+
+        );
+
+
+
+      
+
+        prevPage.addEventListener(
+
+            "click",
+
+            function() {
+
+                irParaPagina(
+
+                    paginaAtual - 1
+
+                );
+
+            }
+
+        );
+
+
+
+
+        document.addEventListener(
+
+            "keydown",
+
+            function(event) {
+
+
+                /* SETA DIREITA */
+
+                if (
+
+                    event.key ===
+                    "ArrowRight"
+
+                ) {
+
+                    irParaPagina(
+
+                        paginaAtual + 1
+
+                    );
+
+                }
+
+
+              
+                if (
+
+                    event.key ===
+                    "ArrowLeft"
+
+                ) {
+
+                    irParaPagina(
+
+                        paginaAtual - 1
+
+                    );
+
+                }
+
+
+             
+                if (
+
+                    event.key ===
+                    "Escape"
+
+                ) {
+
+                    window.location.href =
+                        "index.html#historias";
+
+                }
+
+
+          
+
+                if (
+
+                    event.key === " "
+
+                    &&
+
+                    document.activeElement.tagName
+                    !== "BUTTON"
+
+                ) {
+
+                    event.preventDefault();
+
+
+                    irParaPagina(
+
+                        paginaAtual + 1
+
+                    );
+
+                }
+
+            }
+
+        );
+
+
+
+       
+
+
+        let toqueInicial = 0;
+
+
+        bookPages.addEventListener(
+
+            "touchstart",
+
+            function(event) {
+
+                toqueInicial =
+
+                    event.changedTouches[0]
+                    .screenX;
+
+            },
+
+            {
+                passive: true
+            }
+
+        );
+
+
+        bookPages.addEventListener(
+
+            "touchend",
+
+            function(event) {
+
+
+                const toqueFinal =
+
+                    event.changedTouches[0]
+                    .screenX;
+
+
+                const distancia =
+
+                    toqueFinal -
+                    toqueInicial;
+
+
+
+                /* DESLIZAR PARA ESQUERDA */
+
+                if (distancia < -50) {
+
+                    irParaPagina(
+
+                        paginaAtual + 1
+
+                    );
+
+                }
+
+
+
+                /* DESLIZAR PARA DIREITA */
+
+                if (distancia > 50) {
+
+                    irParaPagina(
+
+                        paginaAtual - 1
+
+                    );
+
+                }
+
+            },
+
+            {
+                passive: true
+            }
+
+        );
+
+
+
+       
+
+        atualizarLeitor();
+
+
+    </script>
+
+
+</body>
+
+</html>

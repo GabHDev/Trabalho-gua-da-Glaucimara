@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODS 6</title>
+  <link rel="stylesheet" href="Brincar.css">
+  
+</head>
+<body>
+  
+
+  <header class="topo-pagina">
+    <h1>Saneamento Básico e Água Potável!</h1>
+    <p>Aprenda a cuidar do nosso planeta e cumprir a ODS 6 da ONU!</p>
+    
+  </header>
+
+      <nav class="navbar">
+      <div>
+         <nav class="navbar">
+
+        <a class="logo" href="index.html">
+            💧Inicio 
+        </a>
+            <button class="search-icon" id="openSearch" aria-label="Abrir pesquisa">
+                🔎
+            </button>
+        </div>
+
+    </nav>
+
+  <main class="container">
+   
+
+    <div class="chamada-text">
+        <h1>VÍDEO INFANTIL - SOBRE O CICLO DA ÁGUA</h1>
+
+
+    </div> 
+
+    <div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/g26Wk4gpkws?si=L1gxL5VyRW9a6wd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+</section>
+
+    <section class="categoria">
+
+    </a>
+      <h2>Vídeos infantil para ensinar sobre a Água</h2>
+      <div class="categoria-videos">
+      
+        <a href="https://youtu.be/QtZgNIwlXgc?si=J7i-VXT8ZvoAy4zV">
+          <img src="caminho.png">
+      </a>
+
+
+      <a href="https://youtu.be/_655fTLGg-4?si=9yggtYCtCBiuD3Ek">
+          <img src="guto.png">
+      </a>
+
+      <a href="https://youtu.be/17kR6keWyJQ?si=cxLisPnljX0JXw3N">
+        <img src="3.png">
+      </a>
+
+      <a href="https://youtu.be/ClcluFPSi0Y?si=Q87_kFX-YK0M1rnf">
+        <img src="economizar.png">
+
+      
+      <a href="https://youtu.be/nyvVCeDrSH0?si=d1nZl7TDiq5bLWal">
+        <img src="ultimo.png">
+      </a>
+      
+  
+
+
+  
+      </div>
+  </section>
+
+   
+    <section class="card centralizado">
+      <h3>Somar Meus Gastos de Água</h3>
+      <p>Digite a quantidade para somar o valor gasto no dia (Lembrando, é o valor estimulado e pode está incorreto):</p>
+      <p>Acima de 130 litros por dia por pessoa já é considerado desperdício.</p>
+
+      <div class="formulario-gastos">
+        <label>Quantas vezes escovo meus dentes no dia : 
+          <input type="number" id="dentes" value="0" oninput="somar()">
+        </label>
+
+        <label>Quantas vezes tomo banho no dia: 
+          <input type="number" id="banho" value="0" oninput="somar()">
+        </label>
+
+        <label>Quantas vezes lavo as mãos no dia: 
+          <input type="number" id="maos" value="0" oninput="somar()">
+        </label>
+
+      </div>
+      <h4 id="total" class="resultado-total">Valor Total Gasto: 0 Litros!</h4>
+    </section>
+
+
+    <section class="card card-quiz centralizado">
+      <h3>Desafio da ODS 6</h3>
+      
+
+      <h3>Qual atitude economiza água de verdade?</h3>
+      <button onclick="quiz1(false)" class="botao-opcao">A) Deixar a torneira aberta ao ensaboar as mãos.</button>
+      <button onclick="quiz1(true)" class="botao-opcao">B) Fechar a torneira ao escovar os dentes.</button>
+      <button onclick="quiz1(false)" class="botao-opcao">C) Jogar lixo dentro do vaso sanitário.</button>
+      <p id="resposta" class="texto-resposta"></p>
+     
+
+      <h3>Qual é a principal meta da ODS 6 para o ano de 2030?</h3>
+      <button onclick="quiz2(false)" class="botao-opcao">A) Acabar com todas as praias do mundo.</button>
+      <button onclick="quiz2(false)" class="botao-opcao">B) Proibir o uso de água em indústrias e fazenda.</button>
+      <button onclick="quiz2(true)" class="botao-opcao">C) Garantir a disponibilidade e gestão sustentável da água e saneamento para todos.</button>
+      <p id="resposta2" class="texto-resposta"></p>
+
+
+      <h3>Qual problema de saúde pública está diretamente relacionado à falta de saneamento básico do ODS 6?</h3>
+      <button onclick="quiz3(false)" class="botao-opcao">A) Acabar com todas as praias do mundo.</button>
+      <button onclick="quiz3(true)" class="botao-opcao">B) Doenças veiculadas por água não tratada e falta de esgoto.</button>
+      <button onclick="quiz3(false)" class="botao-opcao">C) Aumento da temperatura global.</button>
+      <p id="resposta3" class="texto-resposta"></p>
+
+      <h3>O que o ODS 6 busca garantir para todas as pessoas?</h3>
+      <button onclick="quiz4(false)" class="botao-opcao">A) Energia elétrica gratuita em residências.</button>
+      <button onclick="qui4(false)" class="botao-opcao">B) A construção de grandes piscinas públicas nas cidades.</button>
+      <button onclick="quiz4(true)" class="botao-opcao">C) Acesso universal e seguro à água potável e ao saneamento básico.</button>
+      <p id="resposta4" class="texto-resposta"></p>
+
+      <h3>Por que o saneamento básico e a água limpa são tão importantes para a saúde?</h3>
+      <button onclick="quiz5(true)" class="botao-opcao">A) Porque ajudam a prevenir doenças infecciosas e melhoram a qualidade de vida.</button>
+      <button onclick="qui5(false)" class="botao-opcao">B) Porque diminuem a velocidade do vento nas cidades.</button>
+      <button onclick="quiz5(false)" class="botao-opcao">C) Porque substituem a necessidade de ir ao hospital</button>
+      <p id="resposta5" class="texto-resposta"></p>
+
+
+
+    </section>
+
+  </main>
+
+
+  <script>
+    function somar() {
+      var Dentes = Number(document.getElementById('dentes').value) || 0;
+      var Banho = Number(document.getElementById('banho').value) || 0;
+      var Maos = Number(document.getElementById('maos').value) || 0;
+     
+      var D = Dentes * 8;   
+      var B = Banho * 65; 
+      var M = Maos * 2;      
+
+      var resultadoFinal = D + B + M;
+      document.getElementById('total').innerText = "Valor Total Gasto: " + resultadoFinal + " Litros! ";
+    }
+
+
+    function quiz1(correto) {
+      var r = document.getElementById('resposta');
+      exibirResultado(r, correto);
+    }
+
+    
+    function quiz2(correto) {
+      var r = document.getElementById('resposta2');
+      exibirResultado(r, correto);
+    }
+
+    
+    function quiz3(correto) {
+      var r = document.getElementById('resposta3');
+      exibirResultado(r, correto);
+    }
+
+    function quiz4(correto) {
+      var r = document.getElementById('resposta4');
+      exibirResultado(r, correto);
+    }
+
+    function quiz5(correto) {
+      var r = document.getElementById('resposta5');
+      exibirResultado(r, correto);
+    }
+
+    function exibirResultado(elemento, correto) {
+      if(correto) {
+        elemento.innerText = "ACERTOU!"; 
+        elemento.style.color = "green";
+      } else {
+        elemento.innerText = "ERROU! Tente de novo!"; 
+        elemento.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+

@@ -841,3 +841,24 @@ footer {
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
     }
+    .story-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    
+        transition: 
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+    
+    .story-link:hover {
+        transform: translateY(-6px);
+    
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .story-link:active {
+        transform: translateY(-2px);
+    }
