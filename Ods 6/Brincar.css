@@ -1,249 +1,245 @@
-/* =========================================================
-   CADA GOTA CONTA — style.css
-   Visual editorial inspirado na referência enviada
-   ========================================================= */
+/* ========================================================= 
+   CADA GOTA CONTA — CSS Corrigido e Integrado
+========================================================= */ 
 
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 110px;
-}
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 110px; 
+} 
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7f5;
-    color: #18172d;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+body { 
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: #f0f9ff; /* Tom suave de azul do segundo CSS */
+    color: #18172d; 
+    line-height: 1.6; 
+    overflow-x: hidden; 
+} 
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+a { 
+    color: inherit; 
+    text-decoration: none; 
+} 
 
-button,
-input {
-    font: inherit;
-}
+button, input { 
+    font: inherit; 
+} 
 
-button {
-    cursor: pointer;
-}
-  
+button { 
+    cursor: pointer; 
+} 
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+/* ==================== MENU SUPERIOR (Mantido do 1º) ==================== */
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    width: 100%; 
+    min-height: 105px; 
+    padding: 0 4vw; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background: rgba(247, 248, 249, 0.95); 
+    border-top: 4px solid #f2f5f5; 
+    border-bottom: 1px solid rgba(4, 0, 255, 0.12); 
+} 
 
-    width: 100%;
-    min-height: 105px;
-    padding: 0 4vw;
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 14px; 
+    min-width: 250px; 
+    color: #0400ff; 
+} 
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.logo-symbol { 
+    width: 58px; 
+    height: 58px; 
+    display: grid; 
+    place-items: center; 
+    font-size: 31px; 
+    border: 2px solid #61d2d2; 
+    border-radius: 50%; 
+} 
 
-    background: rgba(248, 249, 247, .95);
-    backdrop-filter: blur(14px);
+.logo-text { 
+    font-family: Georgia, serif; 
+    font-size: 20px; 
+    line-height: .95; 
+} 
 
-    border-top: 4px solid #263c3a;
-    border-bottom: 1px solid rgba(23, 45, 44, .12);
-}
+.logo-text b { 
+    font-size: 27px; 
+} 
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-width: 250px;
-    color: #172d2c;
-}
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: clamp(18px, 2.4vw, 34px); 
+} 
 
-.logo-symbol {
-    width: 58px;
-    height: 58px;
+.nav-links a { 
+    position: relative; 
+    font-size: 13px; 
+    font-weight: 700; 
+    letter-spacing: .5px; 
+    white-space: nowrap; 
+    transition: color .25s ease; 
+} 
 
-    display: grid;
-    place-items: center;
+.nav-links a::after { 
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    bottom: -9px; 
+    width: 0; 
+    height: 2px; 
+    background: #0400ff; 
+    transition: width .25s ease; 
+} 
 
-    font-size: 31px;
+.nav-links a:hover { 
+    color: #0400ff; 
+} 
 
-    border: 2px solid #172d2c;
-    border-radius: 50%;
-}
+.nav-links a:hover::after { 
+    width: 100%; 
+} 
 
-.logo-text {
-    font-family: Georgia, "", serif;
-    font-size: 20px;
-    line-height: .95;
-}
+.search-icon { 
+    border: 0; 
+    background: transparent; 
+    color: #0400ff; 
+    font-size: 34px; 
+    line-height: 1; 
+    transition: transform .2s ease; 
+} 
 
-.logo-text b {
-    font-size: 27px;
-}
+.search-icon:hover { 
+    transform: scale(1.12); 
+} 
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: clamp(18px, 2.4vw, 34px);
-}
-
-.nav-links a {
+/* ==================== NOVO TOPO (Modificado para alinhar) ==================== */
+.topo-pagina { 
     position: relative;
-
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .5px;
-    white-space: nowrap;
-
-    transition: color .25s ease;
+    z-index: 1;
+    margin-top: 0; /* Removido o espaçamento para o conteúdo subir */
+    background-color: #30d7e6; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='100' height='100'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2' opacity='0.4'%3E%3Cpath d='M20 10c0 0 8 10 8 15a8 8 0 0 1-16 0c0-5 8-15 8-15zM60 15h10v10M70 15v15M20 70h15v10'/%3E%3C/g%3E%3C/svg%3E"); 
+    /* Adicionado padding superior maior para compensar a barra fixa e não cobrir o texto */
+    padding: 140px 40px 40px 40px; 
+    text-align: center; 
+    color: white; 
 }
 
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -9px;
 
-    width: 0;
-    height: 2px;
+/* ==================== LAYOUT E CONTEÚDO ==================== */
+.container { 
+    max-width: 600px; 
+    margin: 20px auto; 
+    padding: 20px; 
+} 
 
-    background: #258f91;
+.card { 
+    background: white; 
+    border: 2px solid #0400ff; 
+    padding: 20px; 
+    border-radius: 15px; 
+    margin-bottom: 20px; 
+} 
 
-    transition: width .25s ease;
-}
+.centralizado { 
+    text-align: center; 
+} 
 
-.nav-links a:hover {
-    color: #258f91;
-}
+h1 { 
+    font-size: 20px; 
+} 
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.search-icon {
-    border: 0;
-    background: transparent;
-    color: #172d2c;
-
-    font-size: 34px;
-    line-height: 1;
-
-    transition: transform .2s ease;
-}
-
-.search-icon:hover {
-    transform: scale(1.12);
-}
-
-  
-
-  .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-  }
-  
-
-  .card {
-    background: white;
-    border: 2px solid #52abde;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .centralizado {
-    text-align: center;
-  }
-
-      
-.categoria-videos{
-  display:flex;
-  overflow-x:auto;
-  gap:10px;
-}
-
-.categoria{
-padding-left: 20px;
-padding-right: 20px;
-margin-top: 50px;
-}
-
-.categoria-videos img{
-  opacity: 0.5;
-  height:200px;
-
-}
-
-.categoria-videos img:hover{
-opacity:1.0;
-border: 2px solid #52abde;
-}
-  
- 
-  .card-quiz {
-    background: white;
-    border: 2px solid #52abde;
-  }
-  
-
-  .chamada-text{
-    margin-right: 5%;
-}
-
-h1{
-    font-size: 20px;
-}
-  
-
-  .formulario-gastos{
-    text-align: left;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .formulario-gastos-label {
+/* Imagem corrigida: sem float para não quebrar o layout e responsiva */
+.img { 
     display: block;
-    margin-bottom: 12px;
-  }
+    max-width: 100%; 
+    width: 500px; 
+    height: auto;
+    margin: 20px auto; 
+} 
 
-  
-  .formulario-gasto-input {
-    width: 60px;
-    float: right;
-  }
+/* ==================== ELEMENTOS DO QUIZ E VÍDEOS ==================== */
+.categoria { 
+    padding-left: 20px; 
+    padding-right: 20px; 
+    margin-top: 50px; 
+} 
 
-  
+.categoria-videos { 
+    display: flex; 
+    overflow-x: auto; 
+    gap: 10px; 
+} 
 
-  .resultado-total {
-    color: #52abde;
-    margin-top: 20px;
-    border-top: 1px dashed white;
-    padding-top: 10px;
-  }
+.categoria-videos img { 
+    opacity: 0.5; 
+    height: 200px; 
+    transition: opacity .2s ease, border .2s ease;
+} 
 
+.categoria-videos img:hover { 
+    opacity: 1.0; 
+    border: 2px solid #0400ff; 
+} 
 
-  .botao-opcao {
-    display: block;
-    width: 100%;
-    margin: 8px 0;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+.card-quiz { 
+    background: white; 
+    border: 2px solid #0400ff; 
+} 
 
-  .texto-resposta {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 15px;
-  }
-  
+.botao-opcao { 
+    display: block; 
+    width: 100%; 
+    margin: 8px 0; 
+    padding: 10px; 
+    font-weight: bold; 
+    cursor: pointer; 
+} 
+
+.texto-resposta { 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    margin-top: 15px; 
+} 
+
+/* ==================== FORMULÁRIO DE GASTOS ==================== */
+.chamada-text { 
+    margin-right: 5%; 
+} 
+
+.formulario-gastos { 
+    text-align: left; 
+    max-width: 300px; 
+    margin: 0 auto; 
+} 
+
+.formulario-gastos-label { 
+    display: block; 
+    margin-bottom: 12px; 
+} 
+
+.formulario-gasto-input { 
+    width: 60px; 
+    float: right; 
+} 
+
+.resultado-total { 
+    color: #0400ff; 
+    margin-top: 20px; 
+    border-top: 1px dashed #0400ff; /* Corrigido de white para azul para dar leitura */
+    padding-top: 10px; 
+}
